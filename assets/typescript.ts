@@ -12,16 +12,16 @@ export class Typescript extends Component {
   currCnt=0;
   start() {
     this.creates();
-    setInterval(this.creates.bind(this),50)
+    setInterval(this.creates.bind(this),5000)
   }
 
   creates() {
-    if(this.cnt>500){
+    if(this.cnt>300){
        return
     }
     ++this.cnt;
 
-    for (let i = 0; i < 1; ++i) {
+    for (let i = 0; i < 100; ++i) {
       let id = this.currCnt % this.prefabNode.length;
       ++this.currCnt;
       let node = instantiate(this.prefabNode[id]);
@@ -35,9 +35,9 @@ export class Typescript extends Component {
       }
 
 
-      let x = Math.random() * 10 * (Math.random() > 0.5 ? -1 : 1);
+      let x = Math.random() * 5 * (Math.random() > 0.5 ? -1 : 1);
       let y = 15
-      let z = Math.random() * 10 * (Math.random() > 0.5 ? -1 : 1);
+      let z = Math.random() * 8 * (Math.random() > 0.5 ? -1 : 1);
       let v = new Vec3(x, y, z);
       node.setPosition(v);
       node.eulerAngles = new Vec3(Math.random() * 180, Math.random() * 180, Math.random() * 180)
