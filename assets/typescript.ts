@@ -12,22 +12,23 @@ export class Typescript extends Component {
   currCnt=0;
   start() {
     this.creates();
-    setInterval(this.creates.bind(this),5000)
+    //setInterval(this.creates.bind(this),5000)
   }
 
   creates() {
-    if(this.cnt>300){
-       return
-    }
+
     ++this.cnt;
 
-    for (let i = 0; i < 100; ++i) {
+    for (let i = 0; i < 50; ++i) {
       let id = this.currCnt % this.prefabNode.length;
       ++this.currCnt;
+      if(this.currCnt>300){
+        return
+     }
       let node = instantiate(this.prefabNode[id]);
       let body = node.addComponent(RigidBody);
       if(!!body){
-        body.mass=100;
+        body.mass=1000;
         body.linearDamping=0.1;
         body.angularDamping=0.1;
         body.linearFactor = new Vec3(1,1,1)

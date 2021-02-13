@@ -3,12 +3,15 @@
   "physics": {
     "defaultMaterial": {
       "restitution": 0,
-      "rollingFriction": 100000,
-      "spinningFriction": 100000,
-      "friction": 100000
+      "rollingFriction": 10000,
+      "spinningFriction": 10000,
+      "friction": 10000
     },
     "gravity": {
-      "y": -50
-    }
+      "y": -60,
+      "x": 1,
+      "z": 1
+    },
+    "sleepThreshold": 1.8
   }
 }
